@@ -32,7 +32,14 @@ public class MemoryGame {
             memoryBoard.set(position, memoryOption);
         }
     }
-
+    public void resetBoard(){
+        System.out.print(points);
+        turns = 0;
+        points = 0;
+        memoryBoard.clear();
+        memoryBoard.addAll(Arrays.asList("", "", "", "", "", "", "", ""));
+        setupMemoryBoard();
+    }
     public boolean checkTwoPositions(int firstIndex, int secondIndex){
        return memoryBoard.get(firstIndex).equals(memoryBoard.get(secondIndex));
     }
